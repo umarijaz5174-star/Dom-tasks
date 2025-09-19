@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Weather Form</h1>
+    <form onsubmit="todayWeather(); return false;">
+        <input type="text" name="city" id="city"height=100; placeholder="Enter city name"/>
+    </form>
+    <div id="result"></div>
+    <br>
+    <button onclick="todayWeather()">Check Weather</button>
+    <script>
+        function todayWeather(){
+            const cityRef=document.getElementById("city");
+            const resultRef=document.getElementById("result");
+            let city=cityRef.value;
+            if(city==="lahore"){
+                weather="40 degree";
+            }
+            else if(city==="gujranwala"){
+               weather="50 degree";
+            }else if(city==="islamabad"){
+                weather="35 degree";
+            }else{
+                alert("You live on Mars")
+            }
+            resultRef.innerHTML=`today weather is${weather}`;
+             
+
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="bmiCalculator(); return false;">
+        <input type="text"id="weight"name="weight"placeholder="Enter your weight in kg"/>
+        <input type="text" name="height" id="height" placeholder="Enter your height in metres"/>
+        <button type="submit">Submit</button>
+        
+    </form>
+    <button onclick="vanishText()">vanish</button>
+    <div id="para">
+        A BMI of 25.48 falls within the "Overweight" category according to the World Health Organization's classification. While this is just slightly above the "Normal" range, it may be an early indication to start paying attention to lifestyle habits such as diet, exercise, and overall health. 
+    </div>
+    <p id="result"></p>
+    <script>
+        function vanishText(){
+            const paraRef=document.getElementById("para");
+            para.style.display="none";
+
+
+        }
+        function bmiCalculator(){
+            const weightRef=document.getElementById("weight");
+            const heightRef=document.getElementById("height");
+            const resultRef=document.getElementById("result");
+            let weight=weightRef.value;
+            let height=heightRef.value;
+            weight=Number(weight);
+            height=Number(height);
+            let bmi=weight/(height*height);
+            resultRef.innerHTML=`The calculated Bmi of person is${bmi}`;
+
+        }
+    </script>
+</body>
+</html>
